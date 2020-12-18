@@ -1,0 +1,18 @@
+{block content}
+
+
+
+	<h1 n:block="title">Nejlepší blog na světě</h1>
+
+	<hr>
+
+	{foreach $posts as $post}
+	<div class="post">
+		<div class="date">{$post->created_at|date:'F j, Y'}</div>
+
+		<h2><a href="{link Post:show $post->id}">{$post->title}</a></h2>
+
+		<div>{$post->content}</div>
+	</div>
+	    <hr>
+	{/foreach}
